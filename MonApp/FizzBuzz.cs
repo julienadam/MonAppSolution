@@ -8,9 +8,23 @@ namespace MonApp
 {
     public class FizzBuzz
     {
-        public static bool IsValidInput(int tour, string input)
+        public int Tour { get; }
+
+        public FizzBuzz(int tour = 1)
         {
-            return true;
+            this.Tour = tour;
+        }
+
+        public bool IsValidInput(string input)
+        {
+            if (Tour % 3 == 0)
+            {
+                return input == "Fizz";
+            }
+            else
+            {
+                return input == Tour.ToString();
+            }
         }
     }
 }
