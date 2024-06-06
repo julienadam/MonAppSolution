@@ -17,6 +17,11 @@ namespace MonApp
 
         public bool IsValidInput(string input)
         {
+            if (input == null)
+            {
+                throw new ArgumentNullException(nameof(input));
+            }
+
             if (Tour % 3 == 0)
             {
                 return input == "Fizz";
